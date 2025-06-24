@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// output:"static" なのでこの指定は不要 (astro.config.mjs)
+export const prerender = true;
+const now = new Date().toLocaleString("ja-JP");
+---
+
+<Layout>
+  <div>このページの情報はビルド時に決定される</div>
+  <p><strong>現在時刻:</strong> {now}</p>
+</Layout>

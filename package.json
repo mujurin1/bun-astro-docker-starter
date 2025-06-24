@@ -6,12 +6,15 @@
     "doc:dev": "docker compose up --build astro-dev",
     "doc:prod": "docker compose up --build astro-prod",
     "dev": "astro dev",
+    "build-preview": "bun run build && bun run preview",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.2.2",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/vercel": "^8.2.0",
     "astro": "^5.10.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
