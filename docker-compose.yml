@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  astro-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "4321:4321"
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules # ホスト側の node_modules を無効化して bun 用にする
+    environment:
+      - NODE_ENV=development
+    tty: true
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: bun.lock
+
+  astro-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=production

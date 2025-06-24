@@ -1,0 +1,11 @@
+node_modules
+dist
+.bun
+.cache
+*.log
+*.tmp
+.env
+.vscode
+.dockerignore
+Dockerfile
+docker-compose.yml
