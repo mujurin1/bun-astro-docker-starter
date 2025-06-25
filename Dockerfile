@@ -21,7 +21,7 @@ CMD ["bun", "run", "dev", "--", "--host"]
 
 
 # ======== 本番ビルドステージ ========
-FROM oven/bun:1.2.17 as build
+FROM oven/bun:1.2.17 AS build
 
 WORKDIR /app
 
@@ -31,7 +31,7 @@ RUN bun install --production && bun run build
 
 
 # ======== 本番実行用ステージ ========
-FROM oven/bun:1.2.17-alpine as production
+FROM oven/bun:1.2.17-alpine AS production
 
 WORKDIR /app
 
